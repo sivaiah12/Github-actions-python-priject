@@ -18,3 +18,11 @@ jobs:
           # Optional - x64 or x86 architecture, defaults to x64
           architecture: 'x64'
       # You can test your matrix by printing the current Python version
+  steps:
+  - uses: actions/checkout@v4
+  - name: Set up Python
+    uses: actions/setup-python@v5
+    with:
+      python-version: '3.x'
+  - name: Install dependencies
+    run: python -m pip install --upgrade pip setuptools wheel
